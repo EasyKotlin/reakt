@@ -1,4 +1,4 @@
-package com.easykotlin.reakt
+package com.easykotlin.reakt.security
 
 import com.easykotlin.reakt.handler.MyAccessDeniedHandler
 import com.easykotlin.reakt.service.MyUserDetailService
@@ -51,7 +51,7 @@ class WebSecurityConfig : WebSecurityConfigurerAdapter() {
             //.loginPage("/login")// url 请求路径，对应 LoginController 里面的 @GetMapping("/login")
             .usernameParameter("username")
             .passwordParameter("password")
-            .defaultSuccessUrl("/article_list").permitAll()
+            .defaultSuccessUrl("/index").permitAll()
             .and()
             .exceptionHandling().accessDeniedHandler(myAccessDeniedHandler())
 //            .exceptionHandling().accessDeniedPage("/403")

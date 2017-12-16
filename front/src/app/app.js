@@ -3,8 +3,6 @@ import { Message, Dialog, EmptyData } from 'uxcore';
 import { assign } from 'lodash';
 import { isDev } from 'variables';
 import DB from 'db';
-import { render } from 'react-dom';
-import { Routes, history } from './routes';
 import './app.less';
 
 // This is a Chrome only hack
@@ -20,7 +18,6 @@ Refast.use('fn', {
   message: Message,
   dialog: Dialog,
   DB,
-  history,
 });
 
 const Loading = () => <div className="kuma-loading" />;
@@ -31,4 +28,3 @@ const Empty = EmptyData || (() => <div>暂无数据</div>);
 assign(LogicRender.defaultProps, { Empty, Loading });
 
 
-render(Routes, document.getElementById('App'));

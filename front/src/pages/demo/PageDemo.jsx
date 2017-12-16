@@ -1,6 +1,5 @@
 import { Component, LogicRender } from 'refast';
-import { withRouter } from 'react-router';
-import i18n from 'i18n';
+import { render } from 'react-dom';
 import SearchWord from 'components/search-word';
 import SearchData from 'components/search-data';
 import './PageDemo.less';
@@ -38,6 +37,6 @@ class PageDemo extends Component {
     );
   }
 }
-export default withRouter(PageDemo);
+render(<PageDemo />, document.getElementById('App'));
 
 

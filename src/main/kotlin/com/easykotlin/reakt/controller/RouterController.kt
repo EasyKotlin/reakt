@@ -13,6 +13,10 @@ class RouterController {
         return "/index"
     }
 
+    @GetMapping(value = ["/demo"])
+    fun demo(): String {
+        return "/demo"
+    }
 
     @GetMapping(value = ["/article_list"])
     fun articleList(): String {

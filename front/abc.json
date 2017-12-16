@@ -5,14 +5,12 @@
     "template": "https://github.com/nowa-webpack/template-uxcore/archive/v5.zip",
     "npm": "https://registry.npm.taobao.org",
     "vars": {
-      "locale": "zh-cn",
       "__LOCAL__": true
     },
     "buildvars": {
-      "__LOCAL__": [false],
-      "locale": [ "zh-cn", "en" ]
+      "__LOCAL__": [false]
     },
-    "pages": false,
+    "pages": true,
     "injects": [
       "uxcore/assets/iconfont.css",
       "uxcore/assets/orange.css",
@@ -21,8 +19,7 @@
     "alias": {
       "components":"components",
       "db":"app/db.js",
-      "variables":"app/variables.js",
-      "i18n": "i18n"
+      "variables":"app/variables.js"
     },
     "mockapi": {
       "/mock/user/query.json": "mock/user/query.js"
