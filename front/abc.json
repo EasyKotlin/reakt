@@ -1,0 +1,31 @@
+{
+  "name": "reakt",
+  "options": {
+    "type": "uxcore",
+    "template": "https://github.com/nowa-webpack/template-uxcore/archive/v5.zip",
+    "npm": "https://registry.npm.taobao.org",
+    "vars": {
+      "locale": "zh-cn",
+      "__LOCAL__": true
+    },
+    "buildvars": {
+      "__LOCAL__": [false],
+      "locale": [ "zh-cn", "en" ]
+    },
+    "pages": false,
+    "injects": [
+      "uxcore/assets/iconfont.css",
+      "uxcore/assets/orange.css",
+      "uxcore"
+    ],
+    "alias": {
+      "components":"components",
+      "db":"app/db.js",
+      "variables":"app/variables.js",
+      "i18n": "i18n"
+    },
+    "mockapi": {
+      "/mock/user/query.json": "mock/user/query.js"
+    }
+  }
+}

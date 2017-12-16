@@ -1,0 +1,4 @@
+*.config.js
+i18n/
+dist/
+mock/
