@@ -55,7 +55,7 @@ dependencies {
     testCompile('org.springframework.security:spring-security-test')
 }
 
-// 自定义 kor 插件的输入参数
+// 自定义 kor 插件的输入参数: entity 自动生成实体类，Dao 层，Controller 层的模板代码
 korArgs {
-    entity = 'Book'
+    entity = 'Article'
 }
