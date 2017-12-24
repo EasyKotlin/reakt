@@ -1,10 +1,9 @@
 import nattyFetch from 'natty-fetch';
-import { urlPrefix, isDev } from './variables';
+import {isDev, urlPrefix} from './variables';
 
 // See https://github.com/Jias/natty-fetch for more details.
 const context = nattyFetch.context({
   mockUrlPrefix: urlPrefix,
-  urlPrefix,
   mock: isDev,
   // jsonp: true,
   withCredentials: false,
@@ -23,14 +22,6 @@ const context = nattyFetch.context({
         errorLevel: response.errorLevel,
       },
     };
-  },
-});
-
-context.create('User', {
-  // 这里可以通过`abc.json`设置模拟数据
-  query: {
-    mockUrl: 'user/query.json',
-    url: 'user/query.json',
   },
 });
 

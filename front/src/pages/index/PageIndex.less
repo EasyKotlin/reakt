@@ -1,0 +1,144 @@
+.page-index {
+  padding: 20px;
+  & .kuma-input {
+    width: 350px;
+  }
+  h3 {
+    display: block;
+    font-weight: bold;
+    line-height: 2;
+  }
+  p {
+    line-height: 1.5;
+  }
+}
+
+@border-radius: .5rem;
+
+.site-banner {
+  background-image: linear-gradient(#40b370, #85d4a6);
+  background-color: #85d4a6;
+  height: 360px;
+  width: 100%;
+  position: relative;
+  border-radius: @border-radius;
+}
+
+.site-feature {
+  width: 100%;
+  height: 51rem;
+  padding-top: 20px;
+  background: #eee;
+  border-radius: @border-radius;
+}
+
+.site-feature .feature-item {
+  width: 33.3%;
+  position: relative;
+  display: inline-block;
+  height: 26rem;
+}
+
+.site-feature .feature-item .feature-item-feature {
+  display: inline-block;
+  position: absolute;
+  left: 50%;
+  margin-left: -126px;
+}
+
+.site-feature .feature-item .feature-item-feature .feature-item-text {
+  display: inline-block;
+  vertical-align: top;
+  width: 21rem;
+}
+
+.site-feature .feature-item .feature-item-feature .feature-item-text .feature-item-title {
+  margin-top: 15px;
+  font-size: 24px;
+}
+
+.site-feature .feature-item .feature-item-feature .feature-item-text .feature-item-des {
+  font-size: 16px;
+}
+
+.welcome {
+  font-size: 4rem;
+  color: whitesmoke;
+  padding: 7rem;
+}
+
+@-webkit-keyframes spring-boot-icon-animation {
+  from {
+    -webkit-transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+  }
+}
+
+@spring-boot-icon-animation: spring-boot-icon-animation 6s linear 0s infinite;
+@size: 300px;
+
+.spring-boot-icon {
+
+  background-image: url(../../images/project-icon-large.png);
+  background-position: left top;
+  background-repeat: no-repeat;
+  width: @size;
+  height: @size;
+  position: absolute;
+  top: 32px;
+  left: 400px;
+  opacity: 0.6;
+  -webkit-animation: @spring-boot-icon-animation;
+}
+
+@offsetX: calc(100vw / 1.5);
+@offsetY: 30px;
+
+@keyframes kotlin-icon-animation {
+  0%,
+  20% {
+    transition-timing-function: cubic-bezier(0.215, .61, .355, 1); /*贝塞尔曲线 ： X1 Y1 X2 Y2*/
+    transform: translate3d(0, 0, 0); /*设置只在Z轴上移动*/
+  }
+  30%,
+  40% {
+    transition-timing-function: cubic-bezier(0.755, 0.50, 0.855, 0.060);
+    transform: translate3d(@offsetX, 0, 0);
+  }
+  50%,
+  60% {
+    transition-timing-function: cubic-bezier(0.755, 0.050, 0.855, 0.060);
+    transform: translate3d(@offsetX, @offsetY, 0);
+  }
+  70%,
+  80% {
+    transform: translate3d(0, @offsetY, 0);
+  }
+  90%,
+  100% {
+    transition-timing-function: cubic-bezier(0.215, .61, .355, 1);
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@kotlin-icon-animation: kotlin-icon-animation 20s linear 0s infinite;
+
+.kotlin-icon {
+  background-image: url(../../images/kotlin-icon.jpg);
+  border-radius: 1rem;
+  background-position: right top;
+  background-repeat: no-repeat;
+  width: @size;
+  height: @size;
+  position: absolute;
+  top: 20px;
+  left: 50px;
+  opacity: 0.15;
+  -webkit-animation: @kotlin-icon-animation;
+}
+
+
+
+

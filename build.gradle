@@ -53,9 +53,13 @@ dependencies {
     runtime('mysql:mysql-connector-java')
     testCompile('org.springframework.boot:spring-boot-starter-test')
     testCompile('org.springframework.security:spring-security-test')
+
+    // https://mvnrepository.com/artifact/com.alibaba/fastjson
+    compile group: 'com.alibaba', name: 'fastjson', version: '1.2.44'
+
 }
 
 // 自定义 kor 插件的输入参数: entity 自动生成实体类，Dao 层，Controller 层的模板代码
 korArgs {
-    entity = 'Article'
+    entity = 'Demo'
 }

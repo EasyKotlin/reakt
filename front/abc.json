@@ -22,7 +22,8 @@
       "variables":"app/variables.js"
     },
     "mockapi": {
-      "/mock/user/query.json": "mock/user/query.js"
+      "/mock/user/query.json": "mock/user/query.js",
+      "/mock/user/currentUser.json": "mock/user/currentUser.js"
     }
   }
 }

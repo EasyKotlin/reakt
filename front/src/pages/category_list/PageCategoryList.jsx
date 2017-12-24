@@ -1,11 +1,12 @@
 import {render} from 'react-dom';
 import {Component} from 'refast';
 import logic from './logic';
-import './PageArticleList.less';
+import './PageCategoryList.less';
 import Topnavbar from "../../components/topnavbar/Topnavbar";
 import Footer from "../../components/footer/Footer";
+import CategoryList from "../../components/category_list/CategoryList";
 
-export default class PageArticleList extends Component {
+export default class PageCategoryList extends Component {
 
   constructor(props) {
     super(props, logic);
@@ -15,8 +16,8 @@ export default class PageArticleList extends Component {
     return (
       <div>
         <Topnavbar/>
-        <div className="page-article_list">
-          page article_list
+        <div className="page-category_list">
+          <CategoryList />
         </div>
         <Footer/>
       </div>
@@ -24,4 +25,4 @@ export default class PageArticleList extends Component {
   }
 }
 
-render(<PageArticleList/>, document.getElementById('App'));
+render(<PageCategoryList/>, document.getElementById('App'));

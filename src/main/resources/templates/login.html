@@ -1,0 +1,21 @@
+<html>
+<head><title>登录</title></head>
+<body onload='document.f.username.focus();'>
+<h3>请输入用户名密码登录</h3>
+<form name='f' action='/login' method='POST'>
+    <table>
+        <tr>
+            <td>用户名:</td>
+            <td><input type='text' name='username' value='admin'></td>
+        </tr>
+        <tr>
+            <td>密码:</td>
+            <td><input type='password' name='password' value='admin'/></td>
+        </tr>
+        <tr>
+            <td colspan='2'><input name="submit" type="submit" value="登录"/></td>
+        </tr>
+    </table>
+</form>
+</body>
+</html>

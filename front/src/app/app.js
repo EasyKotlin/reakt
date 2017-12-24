@@ -1,9 +1,20 @@
-import Refast, { LogicRender } from 'refast';
-import { Message, Dialog, EmptyData } from 'uxcore';
-import { assign } from 'lodash';
-import { isDev } from 'variables';
+import Refast, {LogicRender} from 'refast';
+import {Dialog, EmptyData, Message} from 'uxcore';
+import {assign} from 'lodash';
+import {isDev} from 'variables';
 import DB from 'db';
 import './app.less';
+
+import React from 'react'
+import {render} from 'react-dom'
+import {browserHistory, hashHistory, IndexRedirect, IndexRoute, Redirect, Route, Router} from 'react-router'
+
+import PageArticleList from "../pages/article_list/PageArticleList";
+import PageCategoryList from "../pages/category_list/PageCategoryList";
+import PageTagList from "../pages/tag_list/PageTagList";
+import PageIndex from "../pages/index/PageIndex";
+import {URLS} from "./variables";
+
 
 // This is a Chrome only hack
 if (isDev && window.chrome && window.chrome.webstore) {
@@ -20,11 +31,24 @@ Refast.use('fn', {
   DB,
 });
 
-const Loading = () => <div className="kuma-loading" />;
-const Empty = EmptyData || (() => <div>暂无数据</div>);
 
-// 修改 LogicRender 增加默认配置
-// 用来自定义Loading和Empty的样式
-assign(LogicRender.defaultProps, { Empty, Loading });
+var his;
+if (isDev) {
+  //SPA
+  his = hashHistory
+} else {
+  his = browserHistory
+}
 
+let routes =
+  <Route path="/">
+    <IndexRedirect to="index"/>
+    <Route path="index" component={PageIndex}/>
+    <Route path="article_list" component={PageArticleList}/>
+    <Route path="category_list" component={PageCategoryList}/>
+    <Route path="tag_list" component={PageTagList}/>
+  </Route>
+
+let router = <Router routes={routes} history={his}/>
+ReactDOM.render(router, document.getElementById('App'))
 

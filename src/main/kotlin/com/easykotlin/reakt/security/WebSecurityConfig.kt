@@ -48,7 +48,7 @@ class WebSecurityConfig : WebSecurityConfigurerAdapter() {
             .anyRequest().authenticated()
             .and()
             .formLogin()
-            //.loginPage("/login")// url 请求路径，对应 LoginController 里面的 @GetMapping("/login")
+            .loginPage("/login")// url 请求路径，对应 LoginController 里面的 @GetMapping("/login")
             .usernameParameter("username")
             .passwordParameter("password")
             .defaultSuccessUrl("/index").permitAll()
