@@ -10,10 +10,12 @@ import {render} from 'react-dom'
 import {browserHistory, hashHistory, IndexRedirect, IndexRoute, Redirect, Route, Router} from 'react-router'
 
 import PageArticleList from "../pages/article_list/PageArticleList";
-import PageCategoryList from "../pages/category_list/PageCategoryList";
 import PageTagList from "../pages/tag_list/PageTagList";
 import PageIndex from "../pages/index/PageIndex";
 import {URLS} from "./variables";
+import PageCategoryList1 from "../pages/category_list_1/PageCategoryList1";
+import PageCategoryList2 from "../pages/category_list_2/PageCategoryList2";
+import PageCategoryList3 from "../pages/category_list_3/PageCategoryList3";
 
 
 // This is a Chrome only hack
@@ -45,7 +47,9 @@ let routes =
     <IndexRedirect to="index"/>
     <Route path="index" component={PageIndex}/>
     <Route path="article_list" component={PageArticleList}/>
-    <Route path="category_list" component={PageCategoryList}/>
+    <Route path="category_list_1" component={PageCategoryList1}/>
+    <Route path="category_list_2" component={PageCategoryList2}/>
+    <Route path="category_list_3" component={PageCategoryList3}/>
     <Route path="tag_list" component={PageTagList}/>
   </Route>
 

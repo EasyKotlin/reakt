@@ -16,9 +16,19 @@ class RouterController {
         return "/article_list"
     }
 
-    @GetMapping(value = ["/category_list"])
-    fun category_list(): String {
-        return "/category_list"
+    @GetMapping(value = ["/category_list_1"])
+    fun category_list_1(): String {
+        return "/category_list_1"
+    }
+
+    @GetMapping(value = ["/category_list_2"])
+    fun category_list_2(): String {
+        return "/category_list_2"
+    }
+
+    @GetMapping(value = ["/category_list_3"])
+    fun category_list_3(): String {
+        return "/category_list_3"
     }
 
     @GetMapping(value = ["/tag_list"])

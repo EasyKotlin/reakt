@@ -8,6 +8,11 @@ import javax.persistence.*
  * Created by Kor on 2017-12-24 14:04:20.
  */
 @Entity
+@Table(indexes = [
+    Index(columnList = "code", unique = true),
+    Index(columnList = "name", unique = false),
+    Index(columnList = "type", unique = false)
+])
 class Category {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -16,9 +21,9 @@ class Category {
     var gmtModify = Date()
     var isDeleted = 0
 
-    @Column(unique = true, length = 200)
-    var name = ""
     @Column(length = 200)
+    var name = ""
+    @Column(length = 1000)
     var detail = ""
 
     /**

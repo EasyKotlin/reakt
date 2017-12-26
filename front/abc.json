@@ -5,15 +5,17 @@
     "template": "https://github.com/nowa-webpack/template-uxcore/archive/v5.zip",
     "npm": "https://registry.npm.taobao.org",
     "vars": {
-      "__LOCAL__": true
+      "__LOCAL__": true,
+      "__HOST_NAME__": "http://127.0.0.1:3000/"
     },
     "buildvars": {
-      "__LOCAL__": [false]
+      "__LOCAL__": [false],
+      "__HOST_NAME__": ["http://127.0.0.1:8004/"]
     },
     "pages": true,
     "injects": [
       "uxcore/assets/iconfont.css",
-      "uxcore/assets/orange.css",
+      "uxcore/assets/green.css",
       "uxcore"
     ],
     "alias": {

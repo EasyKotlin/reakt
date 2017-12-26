@@ -14,9 +14,9 @@
   "homepage": "",
   "license": "MIT",
   "dependencies": {
-    "refast": "~1.2.3",
-    "natty-storage": "~2.0.2",
     "natty-fetch": "~2.4.2",
+    "natty-storage": "~2.0.2",
+    "refast": "~1.2.3",
     "uxcore": "~0.15.18"
   },
   "devDependencies": {

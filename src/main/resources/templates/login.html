@@ -1,21 +1,47 @@
 <html>
-<head><title>登录</title></head>
+<head><title>登录</title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/latest/css/bootstrap.min.css">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/latest/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/react-bootstrap-table@4.3.1/dist/react-bootstrap-table-all.min.css">
+
+</head>
 <body onload='document.f.username.focus();'>
-<h3>请输入用户名密码登录</h3>
-<form name='f' action='/login' method='POST'>
-    <table>
-        <tr>
-            <td>用户名:</td>
-            <td><input type='text' name='username' value='admin'></td>
-        </tr>
-        <tr>
-            <td>密码:</td>
-            <td><input type='password' name='password' value='admin'/></td>
-        </tr>
-        <tr>
-            <td colspan='2'><input name="submit" type="submit" value="登录"/></td>
-        </tr>
-    </table>
-</form>
+
+<div class="container">
+
+    <div style="text-align: center;
+    height:10rem;
+    padding: 10rem 0rem 10rem 0rem;
+    font-size: 3rem">
+        登陆界面
+    </div>
+
+    <form name='f' action='/login' method='POST' class="form-horizontal">
+        <div class="form-group">
+            <label class="col-sm-3 control-label">用户名:</label>
+            <div class="col-sm-6">
+                <input type="text" name="username" value='admin' class="form-control" id="inputEmail3"
+                       placeholder="Email">
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-3 control-label">密码:</label>
+            <div class="col-sm-6">
+                <input type="password" name='password' value='admin' class="form-control" id="inputPassword3"
+                       placeholder="Password">
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-sm-offset-3 col-sm-10">
+                <input name="submit" type="submit" class="btn btn-primary" value="登录"/>
+            </div>
+        </div>
+    </form>
+</div>
+
 </body>
 </html>

@@ -1,9 +1,11 @@
 package com.easykotlin.reakt.controller
 
+import com.alibaba.fastjson.JSON
 import com.easykotlin.reakt.dao.CategoryDao
 import com.easykotlin.reakt.entity.Category
+import com.easykotlin.reakt.page.PageConterter
+import com.easykotlin.reakt.page.PageDto
 import org.springframework.beans.factory.annotation.Autowired
-import org.springframework.data.domain.Page
 import org.springframework.data.domain.PageRequest
 import org.springframework.web.bind.annotation.*
 import javax.servlet.http.HttpServletRequest
@@ -28,15 +30,23 @@ class CategoryController {
     }
 
 
-    @GetMapping(value = ["/page"])
+    @GetMapping(value = ["/page.json"])
     fun page(
-        @RequestParam(value = "pageNum", defaultValue = "0") pageNum: Int,
+        @RequestParam(value = "currentPage", defaultValue = "1") currentPage: Int,
         @RequestParam(value = "pageSize", defaultValue = "10") pageSize: Int,
-        @RequestParam(value = "searchText", defaultValue = "") searchText: String
-    ): Page<Category> {
+        @RequestParam(value = "searchTxt", defaultValue = "") searchTxt: String,
+        @RequestParam(value = "type", defaultValue = "1") type: Int
+    ): PageDto<Category> {
 
-        return CategoryDao.page(searchText, PageRequest.of(pageNum, pageSize))
+        println("searchTxt = $searchTxt")
 
+        // Spring Data JPA 的分页默认第一页是： pageNum = 0
+        val page = CategoryDao.page(searchTxt, type,
+                PageRequest.of(currentPage - 1, pageSize))
+        println("page = ${JSON.toJSONString(page)}")
+        val pageDto = PageDto<Category>()
+        PageConterter.convert(page, pageDto)
+        return pageDto
     }
 
 }

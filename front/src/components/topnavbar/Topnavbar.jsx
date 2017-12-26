@@ -25,13 +25,17 @@ export default class Topnavbar extends Component {
 
     var index_url = isDev ? '/#/index' : 'index'
     var article_list_url = isDev ? '/#/article_list' : 'article_list'
-    var category_list_url = isDev ? '/#/category_list' : 'category_list'
+    var category_list_url_1 = isDev ? '/#/category_list_1' : 'category_list_1'
+    var category_list_url_2 = isDev ? '/#/category_list_2' : 'category_list_2'
+    var category_list_url_3 = isDev ? '/#/category_list_3' : 'category_list_3'
     var tag_list_url = isDev ? '/#/tag_list' : 'tag_list'
 
     let urls = {
       index_url: index_url,
       article_list_url: article_list_url,
-      category_list_url: category_list_url,
+      category_list_url_1: category_list_url_1,
+      category_list_url_2: category_list_url_2,
+      category_list_url_3: category_list_url_3,
       tag_list_url: tag_list_url,
     }
 
@@ -56,19 +60,23 @@ export default class Topnavbar extends Component {
     var u = localStorage.getItem("username")
     if (!u) {
       $.get(URLS.fetchCurrentUserUrl, function (result) {
-        try {
-          var currentUser = JSON.parse(result);
-          console.log(`currentUser = ${currentUser}`)
-          u = currentUser.loginUser.username
-          localStorage.setItem("username", u)
-        } catch (e) {
-          // 如果 JSON.parse 解析异常，尝试直接对象访问
-          console.log(e)
-          currentUser = result;
-          console.log(`currentUser = ${currentUser}`)
-          u = currentUser.loginUser.username
-          localStorage.setItem("username", u)
+        var currentUser;
+        if (isDev) {
+          try {
+            currentUser = JSON.parse(result);
+          } catch (e) {
+            // 如果 JSON.parse 解析异常
+            console.log(e)
+          }
         }
+        else {
+          currentUser = result;
+        }
+
+        console.log(`currentUser = ${currentUser}`)
+        u = currentUser.loginUser.username
+        localStorage.setItem("username", u)
+
       }.bind(this));
     }
 
@@ -105,8 +113,18 @@ export default class Topnavbar extends Component {
           </Menu.Item>
 
           <SubMenu title={<span><Icon name="renwufull">分类</Icon></span>}>
-            <Menu.Item key="setting:1">
-              <a href={this.state.urls.category_list_url}>
+            <Menu.Item key="category_list_url_1">
+              <a href={this.state.urls.category_list_url_1}>
+                <Icon name="right"> 学科分类</Icon>
+              </a>
+            </Menu.Item>
+            <Menu.Item key="category_list_url_2">
+              <a href={this.state.urls.category_list_url_2}>
+                <Icon name="right"> 图书分类</Icon>
+              </a>
+            </Menu.Item>
+            <Menu.Item key="category_list_url_3">
+              <a href={this.state.urls.category_list_url_3}>
                 <Icon name="right"> 行业分类</Icon>
               </a>
             </Menu.Item>
