@@ -4,6 +4,7 @@ import logic from './logic';
 import './PageArticleList.less';
 import Topnavbar from "../../components/topnavbar/Topnavbar";
 import Footer from "../../components/footer/Footer";
+import ArticleEditor from "../../components/article_editor/ArticleEditor";
 
 export default class PageArticleList extends Component {
 
@@ -16,7 +17,7 @@ export default class PageArticleList extends Component {
       <div>
         <Topnavbar/>
         <div className="page-article_list">
-          page article_list
+          <ArticleEditor/>
         </div>
         <Footer/>
       </div>
